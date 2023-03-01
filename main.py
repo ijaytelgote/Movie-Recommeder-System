@@ -25,9 +25,9 @@ def recommend(movie):
     return recommended_movies,poster
 
 
-movies_dict = pickle.load(open('m_dict.pkl','rb'))
+movies_dict = pickle.load(open(r"C:\Users\jayma\Documents\prods\m_dict.pkl",'rb'))
 movies = pd.DataFrame(movies_dict)
-similarity = pickle.load(open('similarity.pkl','rb'))
+similarity = pickle.load(open(r"C:\Users\jayma\Documents\prods\similarity.pkl",'rb'))
 
 stardom.title('Movie Recommender System')
 
@@ -39,7 +39,7 @@ movies['title'].values
 
 if stardom.button('Show Recommendation'):
     recommended_movie_names,recommended_movie_posters = recommend(selected_movie)
-    col1, col2, col3, col4, col5 = stardom.beta_columns(5)
+    col1, col2, col3, col4, col5 = stardom.columns(5)
     with col1:
         stardom.text(recommended_movie_names[0])
         stardom.image(recommended_movie_posters[0])
